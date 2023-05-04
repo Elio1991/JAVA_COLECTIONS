@@ -48,14 +48,6 @@ public class AlumnoService {
         } while (!opcion.equalsIgnoreCase("n"));
         return alum;
     }
-    public void MostrarAlumno(){
-    for (Alumno elemento : crearAlumno()) {
-            System.out.println(elemento.getNombre());
-            System.out.println(elemento.getNotas().toString());
-        }
-    
-    
-    }
     /*Método notaFinal(): El usuario ingresa el nombre del alumno que 
     quiere calcular su nota final y se lo buleera en la lista de Alumnos.
     Si está en la lista, se llama al método. Dentro del método se usará
