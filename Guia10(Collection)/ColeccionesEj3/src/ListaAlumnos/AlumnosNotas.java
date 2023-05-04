@@ -32,10 +32,7 @@ public class AlumnosNotas {
 
         AlumnoService aServ = new AlumnoService();
         ArrayList<Alumno> alumnos = aServ.crearAlumno();
-        for (Alumno elemento : alumnos) {
-            System.out.println(elemento.getNombre());
-            System.out.println(elemento.getNotas().toString());
-        }
+        aServ.MostrarAlumno();
         boolean esta = false;
         System.out.println("Ingrese el nombre del alumno que "
                 + "desea conocer su promedio");
