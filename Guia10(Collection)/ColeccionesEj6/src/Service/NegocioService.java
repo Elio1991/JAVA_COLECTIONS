@@ -22,11 +22,13 @@ public class NegocioService {
     
     public void agregarProducto(HashMap<String, Double> producto){
         System.out.println("¿Que producto desea agregar?");
-        String prod = leer.next();
+        String prod = leer.next().toUpperCase();
         System.out.println("¿Que precio tiene?");
         Double valor = leer.nextDouble();
         
         producto.put(prod, valor);
+        System.out.println("Producto agregado");
+        System.out.println("###############################");
     }
     
     public void mostrarProductos(HashMap<String, Double> producto){
@@ -36,36 +38,41 @@ public class NegocioService {
         for (Map.Entry<String, Double> lista : producto.entrySet()) {
             String llave = lista.getKey();
             Double valor = lista.getValue();
-            System.out.println("Producto: "+llave+", Valor: "+valor);
+            System.out.println("Producto: "+llave+", Valor: $"+valor);
         }
-        
+        System.out.println("###############################");
     }
     
     public void modificarPrecio(HashMap<String, Double> producto){
        
         System.out.println("¿Que producto desea actualizar?");
-        String prod = leer.next();
-        System.out.println("Ingrese el nuevo valor");
-        Double valor = leer.nextDouble();
+        String prod = leer.next().toUpperCase();
+       
         
         if (producto.containsKey(prod)) {
+             System.out.println("Ingrese el nuevo valor");
+             Double valor = leer.nextDouble();
             producto.put(prod, valor);
             System.out.println("Producto modificado.");
+            System.out.println("###############################");
         }else {
             System.out.println("El producto no existe.");
+            System.out.println("###############################");
         }
         
     }
     
     public void eliminarProducto(HashMap<String, Double> producto){
         System.out.println("¿Que producto desea eliminar?");
-        String prod = leer.next();
+        String prod = leer.next().toUpperCase();
         
         if (producto.containsKey(prod)) {
             producto.remove(prod);
             System.out.println("Producto eliminado.");
+            System.out.println("###############################");
         }else {
             System.out.println("El producto no existe.");
+            System.out.println("###############################");
         }
     
     }

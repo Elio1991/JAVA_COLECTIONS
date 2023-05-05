@@ -63,12 +63,13 @@ public class PeliculaService {
         //   }
     }
     public void mostrarMayorunaHora(){
+        System.out.println("Peliculas de mas de una hora");
         for (Pelicula pelis: peliculas) {
             if (pelis.getDuracion() > 1) {
-                System.out.println(pelis.getTitulo());
+                System.out.println(pelis.toString());
             }
         }
-
+        
     }
     public void MayoraMenor(){
         Comparator<Pelicula> pelisComparator = new Comparator<Pelicula>() {
@@ -110,13 +111,18 @@ public class PeliculaService {
             return Double.compare(duracion2, duracion1);*/
 
     public void ordenarXTitulo(){
-        Comparator<Pelicula> pelisComparator = new Comparator<Pelicula>() {
+       /* Comparator<Pelicula> pelisComparator = new Comparator<Pelicula>() {
             @Override
             public int compare(Pelicula p1, Pelicula p2) {
                 return p1.getTitulo().toLowerCase().compareTo(p2.getTitulo().toLowerCase());
             }
         } ;
+        
         peliculas.sort(pelisComparator);
+        peliculas.sort((p1,p2)->(p1.getTitulo().toLowerCase().compareTo(p2.getTitulo().toLowerCase())*-1));
+        multiplicado por (-1) invierto el orden!
+        */
+        peliculas.sort((p1,p2)->p1.getTitulo().toLowerCase().compareTo(p2.getTitulo().toLowerCase()));
         System.out.println("ordenado alfabeticamente por titulo");
         mostrarPeliculas();
     }

@@ -14,6 +14,7 @@ al usuario.
 package Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -50,13 +51,13 @@ public class PaisService {
         for (Object pais : paises) {
             System.out.println(pais);
         }
-        
     }
     
     public void ordenarAlfabeticamente(HashSet<String> paises){
         System.out.println("Paises ordenados");
         ArrayList<String> orden = new ArrayList(paises);
-        orden.sort(Comparator.naturalOrder());
+        //orden.sort(Comparator.naturalOrder());
+        Collections.sort(orden);
         for (String string : orden) {
             System.out.println(string);
         }

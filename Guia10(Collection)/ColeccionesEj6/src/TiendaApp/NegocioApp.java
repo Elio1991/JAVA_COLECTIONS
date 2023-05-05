@@ -29,9 +29,10 @@ public class NegocioApp {
         NegocioService servicio = new NegocioService();
         int opciones = 0;
         
-        producto.put("Arroz", 300.0);
-        producto.put("Fideo", 250.0);
+        producto.put("ARROZ", 300.0);
+        producto.put("FIDEO", 250.0);
         
+       
         
         do {
             System.out.println("MENU");
@@ -43,7 +44,7 @@ public class NegocioApp {
             System.out.println("4. Mostrar productos");
             System.out.println("5. Salir");
             opciones = leer.nextInt();
-            
+       
             
             switch (opciones) {
                 case 1:
