@@ -23,6 +23,7 @@ import Entidades.Pelicula;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -92,24 +93,21 @@ public class PeliculaService {
         Comparator<Pelicula> pelisComparator = new Comparator<Pelicula>() {
             @Override
             public int compare(Pelicula p1, Pelicula p2) {
-                if(p1.getDuracion() > p2.getDuracion()){
-                    return 1;
-                } else if (p1.getDuracion() < p2.getDuracion() ){
+                if(p1.getDuracion() < p2.getDuracion()){
                     return -1;
+                } else if (p1.getDuracion() > p2.getDuracion() ){
+                    return 1;
 
                 }else return 0;
             }
         } ;
+        /* public int compare(Pelicula p1, Pelicula p2) {
+        return Double.compare(p2.getDuracionPelicula(), p1.getDuracionPelicula());*/
         peliculas.sort(pelisComparator);
         System.out.println("ordenado por duracion menor a mayor");
         mostrarPeliculas();
     }
-
- /* public int compare(Pelicula p1, Pelicula p2) {
-            double duracion1 = p1.getDuracionPelicula();
-            double duracion2 = p2.getDuracionPelicula();
-            return Double.compare(duracion2, duracion1);*/
-
+    
     public void ordenarXTitulo(){
        /* Comparator<Pelicula> pelisComparator = new Comparator<Pelicula>() {
             @Override
@@ -133,6 +131,7 @@ public class PeliculaService {
             return p1.getDirector().toLowerCase().compareTo(p2.getDirector().toLowerCase());
             }
         } ;
+       // Collections.sort(peliculas, pelisComparator);
         peliculas.sort(pelisComparator);
         System.out.println("ordenado alfabeticamente por director");
         mostrarPeliculas();

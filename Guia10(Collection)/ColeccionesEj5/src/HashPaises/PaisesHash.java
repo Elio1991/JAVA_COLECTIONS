@@ -26,7 +26,7 @@ public class PaisesHash {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         HashSet<String> paises = new HashSet();
+        HashSet<String> paises = new HashSet();
         PaisService pais = new PaisService();
         pais.agregarPaises(paises);
         pais.mostrarPaises(paises);

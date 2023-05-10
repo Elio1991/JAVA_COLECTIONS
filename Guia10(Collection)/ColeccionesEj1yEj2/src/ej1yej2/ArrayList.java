@@ -6,6 +6,7 @@ salir, se mostrará todos los perros guardados en el ArrayList.
  */
 package ej1yej2;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class ArrayList {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
         java.util.ArrayList<String> razaPerro = new java.util.ArrayList<>();
         String opcion;
         do {
@@ -32,10 +33,8 @@ Scanner leer = new Scanner(System.in).useDelimiter("\n");
         } while (!opcion.equalsIgnoreCase("n"));
         
         //for (int i = 0; i < razaPerro.size(); i++) {
-            //System.out.println(razaPerro.get(i));
-            
+            //System.out.println(razaPerro.get(i));  
         //}
-        
        /* for (String elemento : razaPerro) {
             elemento = elemento +"A";
             System.out.println(elemento);
@@ -47,7 +46,7 @@ Scanner leer = new Scanner(System.in).useDelimiter("\n");
         usuario se le pedirá un perro y se recorrerá la lista con un Iterator, 
         se buscará el perro en la lista. Si el perro está en la lista, se 
         eliminará el perro que ingresó el usuario y se mostrará la lista
-ordenada. Si el perro no se encuentra en la lista, se le informará al usuario
+        ordenada. Si el perro no se encuentra en la lista, se le informará al usuario
         y se mostrará la lista ordenada.*/
         
         Iterator <String> it = razaPerro.iterator();
@@ -78,6 +77,7 @@ ordenada. Si el perro no se encuentra en la lista, se le informará al usuario
         }else{
             System.out.println("El perro no existe");
         }
+        Collections.sort(razaPerro);
         System.out.println(razaPerro.toString());
 
     }

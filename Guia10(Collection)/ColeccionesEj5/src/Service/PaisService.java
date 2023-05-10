@@ -73,6 +73,7 @@ public class PaisService {
             if (aux.equalsIgnoreCase(eliminar)) {
                 it.remove();
                 bandera = true;
+                //break; 
             }
         }
         if (bandera) {
